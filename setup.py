@@ -14,7 +14,7 @@ setup(
     keywords="logs auditoria audit monitoreo utilidad herramientas Python Django",
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/JaviPulido/django_logmonitor-1.1.3',
+    url='https://github.com/JaviPulido/LogMonitor',
     author='Javier L. Pulido',
     author_email='grupol2st@gmail.com',
     install_requires=[

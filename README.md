@@ -83,4 +83,4 @@ Asegúrate de tener instaladas:
 ## 📄 Licencia
 Este proyecto se distribuye bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más detalles.
 
-Hecho con ❤️ por Javier L. Pulido
+Hecho con ❤️ por [Javier L. Pulido](https://github.com/JaviPulido/LogMonitor)
