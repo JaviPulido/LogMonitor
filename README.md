@@ -28,8 +28,8 @@ Instala LogMonitor con un simple comando:
 pip install django-logmonitor
 ```
 
-## 🛠️ Configuración en solo 2 pasos
-1. Añade la aplicación: Agrega 'logmonitor' a tu lista de INSTALLED_APPS en `settings.py`.  
+## 🛠️ Configuración en solo 3 pasos
+1. **Añade la aplicación:** Agrega 'logmonitor' a tu lista de INSTALLED_APPS en `settings.py`.  
 
 ```python
 INSTALLED_APPS = [
@@ -38,12 +38,18 @@ INSTALLED_APPS = [
 ]
 ```
 
-2. Activa el Middleware: Incluye logmonitor.middleware.RequestMiddleware en tu configuración de MIDDLEWARE.
+2. **Activa el Middleware:** Incluye logmonitor.middleware.RequestMiddleware en tu configuración de MIDDLEWARE.
 ```python
 MIDDLEWARE = [
     'logmonitor.middleware.RequestMiddleware',
     ...
 ]
+```
+
+3. **Migraciones:** Genera y aplica las migraciones necesarias para actualizar la base de datos con los cambios recientes en los modelos
+```bash
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ### _(Opcional)_ Personaliza el AdminSite: Si utilizas un AdminSite personalizado (ej. admin_site), registra el modelo LogMonitor.

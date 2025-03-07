@@ -1,11 +1,13 @@
 Metadata-Version: 2.1
 Name: django-logmonitor
-Version: 1.2.0
-Summary: Una aplicación Django para auditar las acciones de los usuarios en tus modelos.
-Home-page: https://github.com/JaviPulido/django_logmonitor-1.1.3
+Version: 1.2.1
+Summary: Utilidad Django para monitorear y auditar las acciones de los usuarios en tus modelos.
+Home-page: https://github.com/JaviPulido/LogMonitor
 Author: Javier L. Pulido
 Author-email: grupol2st@gmail.com
 License: MIT
+Keywords: logs auditoria audit monitoreo utilidad herramientas Python Django
+Classifier: Development Status :: 5 - Production/Stable
 Classifier: Environment :: Web Environment
 Classifier: Framework :: Django
 Classifier: Framework :: Django :: 3.2
@@ -14,12 +16,16 @@ Classifier: Framework :: Django :: 4.1
 Classifier: Framework :: Django :: 4.2
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Spanish
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Utilities
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: System :: Monitoring
 Classifier: Topic :: Internet :: WWW/HTTP
 Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
 Description-Content-Type: text/markdown
@@ -29,8 +35,9 @@ License-File: LICENSE
 # LogMonitor <img src="URL_A_TU_LOGO" width="50" align="right">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PyPI version](https://badge.fury.io/py/django-logmonitor.svg)](https://badge.fury.io/py/django-logmonitor)
+[![PyPI version](https://img.shields.io/pypi/v/django-logmonitor.svg?cacheSeconds=3600)](https://pypi.org/project/django-logmonitor/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/usuario/repo/graphs/commit-activity)
 
 **Auditoría completa y sencilla para tus modelos Django.**
 
@@ -54,8 +61,8 @@ Instala LogMonitor con un simple comando:
 pip install django-logmonitor
 ```
 
-## 🛠️ Configuración en solo 2 pasos
-1. Añade la aplicación: Agrega 'logmonitor' a tu lista de INSTALLED_APPS en `settings.py`.  
+## 🛠️ Configuración en solo 3 pasos
+1. **Añade la aplicación:** Agrega 'logmonitor' a tu lista de INSTALLED_APPS en `settings.py`.  
 
 ```python
 INSTALLED_APPS = [
@@ -64,12 +71,18 @@ INSTALLED_APPS = [
 ]
 ```
 
-2. Activa el Middleware: Incluye logmonitor.middleware.RequestMiddleware en tu configuración de MIDDLEWARE.
+2. **Activa el Middleware:** Incluye logmonitor.middleware.RequestMiddleware en tu configuración de MIDDLEWARE.
 ```python
 MIDDLEWARE = [
     'logmonitor.middleware.RequestMiddleware',
     ...
 ]
+```
+
+3. **Migraciones:** Genera y aplica las migraciones necesarias para actualizar la base de datos con los cambios recientes en los modelos
+```bash
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ### _(Opcional)_ Personaliza el AdminSite: Si utilizas un AdminSite personalizado (ej. admin_site), registra el modelo LogMonitor.
@@ -109,4 +122,4 @@ Asegúrate de tener instaladas:
 ## 📄 Licencia
 Este proyecto se distribuye bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más detalles.
 
-Hecho con ❤️ por Javier L. Pulido
+Hecho con ❤️ por [Javier L. Pulido](https://github.com/JaviPulido/LogMonitor)
