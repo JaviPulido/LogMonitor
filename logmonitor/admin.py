@@ -9,8 +9,6 @@ from django.conf import settings
 from .models import LogMonitor
 from django.db import models
 from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter, ChoiceDropdownFilter
-
-
 from django.apps import apps
 
 # Detectar si el proyecto usa admin.site o un admin personalizado
@@ -326,6 +324,3 @@ class LogMonitorAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request):
         return False
-
-# Registrar LogMonitor en el admin detectado
-default_admin_site.register(LogMonitor, LogMonitorAdmin)

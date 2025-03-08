@@ -1,10 +1,10 @@
 
-# LogMonitor <img src="URL_A_TU_LOGO" width="50" align="right">
+# LogMonitor <!--<img src="LOGO" width="50" align="right">-->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI version](https://img.shields.io/pypi/v/django-logmonitor.svg?cacheSeconds=3600)](https://pypi.org/project/django-logmonitor/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/usuario/repo/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/JaviPulido/LogMonitor/graphs/commit-activity)
 
 **Auditoría completa y sencilla para tus modelos Django.**
 
@@ -48,11 +48,11 @@ MIDDLEWARE = [
 
 3. **Migraciones:** Genera y aplica las migraciones necesarias para actualizar la base de datos con los cambios recientes en los modelos
 ```bash
-python manage.py makemigrations
-python manage.py migrate
+python manage.py makemigrations logmonitor
+python manage.py migrate logmonitor
 ```
 
-### _(Opcional)_ Personaliza el AdminSite: Si utilizas un AdminSite personalizado (ej. admin_site), registra el modelo LogMonitor.
+### _(Opcional)_ Personaliza el AdminSite: Solo si utilizas un AdminSite personalizado (ej. admin_site), registra el modelo LogMonitor.
 ```python
 from logmonitor import register_logmonitor
 from tu_proyecto.admin_site import admin_site  # Reemplaza con tu AdminSite
@@ -79,8 +79,8 @@ LOGMONITOR_EXCLUDE_FIELDS = ['fecha_modificacion', 'campo_interno']
 Asegúrate de tener instaladas:
 
 *   Django (>=3.2)
----
-[django-admin-list-filter-dropdown](https://github.com/mrts/django-admin-list-filter-dropdown) (>=1.0): _Proporcionada por [Mart Sõmermaa](https://github.com/mrts)_.  Esta librería facilita la creación de filtros dropdown en el panel de administración de Django, y LogMonitor la incluye para mejorar la experiencia de usuario al filtrar los registros de auditoría.
+
+* [django-admin-list-filter-dropdown](https://github.com/mrts/django-admin-list-filter-dropdown) (>=1.0): _Proporcionada por [Mart Sõmermaa](https://github.com/mrts)_.  Esta librería facilita la creación de filtros dropdown en el panel de administración de Django, y LogMonitor la incluye para mejorar la experiencia de usuario al filtrar los registros de auditoría.
 **LogMonitor gestiona esta librería internamente, por lo que no es necesario añadirla a tu `INSTALLED_APPS` a menos que la estés utilizando directamente en otras partes de tu proyecto.**
 
 ## 🤝 Contribución
